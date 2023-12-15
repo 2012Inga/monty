@@ -3,6 +3,7 @@
  * f_push - add node to the stack
  * @head: stack head
  * @counter: line_number
+ * Authors :2012Inga
  * Return: no return
 */
 void f_push(stack_t **head, unsigned int counter)

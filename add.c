@@ -1,8 +1,14 @@
 #include "monty.h"
 /**
  * f_add - adds the top two elements of the stack.
- * @head: stack head
- * @counter: line_number
+ * This function takes a pointer to the head of a stack and the line number
+ * where the "add" instruction os encountered. It adds the value of the top
+ * two elements of the stack and updates the stack accordingly. If the stack
+ * does not have at least two elements, it prints an error message indicating
+ * that the stack is too short, and the program exits with a failure status.
+ * @head: A duble pointer to the head of the stack.
+ * @counter: The line number where the "add" instruction os encountered.
+ * Authors : 2012Inga
  * Return: no return
 */
 void f_add(stack_t **head, unsigned int counter)

@@ -1,14 +1,27 @@
 #include "monty.h"
 /**
-* execute - executes the opcode
-* @stack: head linked list - stack
-* @counter: line_counter
-* @file: poiner to monty file
-* @content: line content
-* Return: no return
-*/
+* execute - Executes the specified opcode based on the content of a line.
+ *
+ * This function takes a line of content from a Monty file, tokenizes it to
+ * extract the opcode and arguments, and executes the corresponding opcode
+ * function. It uses a table of opcode-function pairs for matching. If an
+ * unknown opcode is encountered, an error message is printed, and the program
+ * exits with an error status. The function is designed to work with a stack
+ * and maintains a counter to track the line number being processed.
+ *
+ * @content: The line content from the Monty file.
+ * @stack: A double pointer to the head of the stack.
+ * @counter: The current line number being processed.
+ * @file: A pointer to the Monty file being read.
+ *
+ * Authors: Originally implemented by 2012Inga.
+ *
+ * Return: Returns 0 upon success, 1 if the line is a comment or empty, and
+ * exits with an error status if an unknown opcode is encountered.
+ */
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
+	/* Table of opcode-function pairs */
 	instruction_t opst[] = {
 				{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
 				{"pop", f_pop},
@@ -30,6 +43,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	unsigned int i = 0;
 	char *op;
 
+	/* Tokenize the content to extract the opcode and arguments */
 	op = strtok(content, " \n\t");
 	if (op && op[0] == '#')
 		return (0);

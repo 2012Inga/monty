@@ -3,6 +3,7 @@
  * f_pchar - prints the char at the top of the stack,
  * followed by a new line
  * @head: stack head
+ * Authors :2012Inga
  * @counter: line_number
  * Return: no return
 */

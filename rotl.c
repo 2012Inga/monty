@@ -1,9 +1,18 @@
 #include "monty.h"
 /**
-  *f_rotl- rotates the stack to the top
-  *@head: stack head
-  *@counter: line_number
-  *Return: no return
+  * f_rotl - Rotates the stack to the top.
+ *
+ * This function rotates the stack to the top in the Monty interpreter.
+ * It shifts all elements in the stack upward, with the first element becoming
+ * the last. If the stack is empty or contains only one element, no rotation
+ * occurs. The `counter` parameter represents the line number in the Monty script,
+ * and it is included for consistency with other opcode functions.
+ *
+ * @head: Pointer to the head of the stack.
+ * @counter: Line number for consistency with other opcode functions (unused).
+ *
+ * Authors: Originally implemented by 2012Inga.
+ * Return: No return value.
  */
 void f_rotl(stack_t **head,  __attribute__((unused)) unsigned int counter)
 {
@@ -11,7 +20,7 @@ void f_rotl(stack_t **head,  __attribute__((unused)) unsigned int counter)
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		return;
+		return;  /* No rotation for empty or single-element stack */
 	}
 	aux = (*head)->next;
 	aux->prev = NULL;

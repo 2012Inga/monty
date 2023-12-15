@@ -1,10 +1,24 @@
 #include "monty.h"
 /**
- * f_mod - computes the rest of the division of the second
- * top element of the stack by the top element of the stack
- * @head: stack head
- * @counter: line_number
- * Return: no return
+ * f_mod - Computes the remainder of the division of the second element from the top
+ *         of the stack by the top element.
+ *
+ *  This function takes a pointer to the head of a stack and the line number
+ * where the "mod" instruction is encountered. It computes the remainder of
+ * dividing the value of the second element from the top by the value of the
+ * top element, updating the stack accordingly. If the stack does not have at
+ * least two elements, it prints an error message indicating that the stack is
+ * too short, and the program exits with a failure status. If the top element
+ * is zero, it prints an error message indicating division by zero and exits
+ * the program with a failure status.
+ *
+ * @head: A double pointer to the head of the stack.
+ * @counter: The line number where the "mod" instruction is encountered.
+ * Authors :This function was originally implemented by 2012Inga.
+ *
+ * Return:  No explicit return value.
+ * Note: The function may terminate the program if the stack is too short or
+ * if division by zero is attempted.
 */
 void f_mod(stack_t **head, unsigned int counter)
 {
